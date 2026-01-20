@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro de Soporte de Mimo - Obtené ayuda y contactanos.">
+  
+  <title>Soporte - Mimo</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">☁️</span>
+          <span>Mimo</span>
+        </a>
+        
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menú">
+          ☰
+        </button>
+        
+        <nav class="nav" id="nav">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="support.html" class="nav-link active">Soporte</a>
+          <a href="index.html#download" class="btn btn-primary">Descargar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="legal-page">
+    <div class="container container-narrow">
+      <div class="legal-header">
+        <h1>Centro de Soporte</h1>
+        <p class="text-muted">Estamos acá para ayudarte con cualquier duda o problema</p>
+      </div>
+      
+      <!-- Quick Help Cards -->
+      <div class="support-grid">
+        <a href="faq.html" class="support-card">
+          <div class="support-icon">❓</div>
+          <h3>Preguntas Frecuentes</h3>
+          <p>Encontrá respuestas rápidas a las dudas más comunes</p>
+          <span class="btn btn-secondary">Ver FAQ</span>
+        </a>
+        
+        <a href="faq.html#funciones" class="support-card">
+          <div class="support-icon">📱</div>
+          <h3>Guía de Uso</h3>
+          <p>Aprendé a sacar el máximo provecho de Mimo</p>
+          <span class="btn btn-secondary">Ver guía</span>
+        </a>
+        
+        <a href="#contact" class="support-card">
+          <div class="support-icon">💬</div>
+          <h3>Contactanos</h3>
+          <p>¿No encontraste lo que buscabas? Escribinos</p>
+          <span class="btn btn-secondary">Contactar</span>
+        </a>
+      </div>
+      
+      <!-- Common Issues -->
+      <section class="mb-4">
+        <h2 style="margin-bottom: var(--spacing-xl);">🔧 Problemas Comunes</h2>
+        
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Las notificaciones no me llegan</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si no estás recibiendo notificaciones, verificá lo siguiente:</p>
+              <ol>
+                <li><strong>Permisos del sistema:</strong> Andá a Configuración > Mimo > Notificaciones y asegurate de que estén habilitadas</li>
+                <li><strong>Configuración en la app:</strong> Abrí Mimo, andá a tu perfil > Notificaciones y verificá que estén activadas</li>
+                <li><strong>Modo No Molestar:</strong> Revisá que no tengas activado el modo No Molestar o Focus en tu iPhone</li>
+                <li><strong>Horario configurado:</strong> Asegurate de que el rango de horas configurado sea correcto</li>
+              </ol>
+              <p>Si después de verificar todo esto seguís sin recibir notificaciones, probá desinstalar y reinstalar la app.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>El widget no muestra afirmaciones</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si tu widget muestra un mensaje de carga o está vacío:</p>
+              <ol>
+                <li><strong>Abrí la app:</strong> El widget se actualiza cuando abrís Mimo</li>
+                <li><strong>Esperá unos segundos:</strong> Los widgets de iOS a veces tardan en actualizarse</li>
+                <li><strong>Eliminá y volvé a agregar el widget:</strong> Mantené presionado el widget > Eliminar widget, luego agregalo de nuevo</li>
+                <li><strong>Reiniciá el iPhone:</strong> Un reinicio puede solucionar problemas de widgets</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>El audio de las afirmaciones no se reproduce</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si no podés escuchar los audios:</p>
+              <ol>
+                <li><strong>Verificá el volumen:</strong> Subí el volumen de tu iPhone y asegurate de no tener el silencio activado</li>
+                <li><strong>Conexión a internet:</strong> Los audios se transmiten online, necesitás conexión</li>
+                <li><strong>Bluetooth:</strong> Si tenés auriculares Bluetooth conectados, verificá que funcionen</li>
+                <li><strong>Cerrá y abrí la app:</strong> A veces reiniciar la app soluciona problemas de audio</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Mi suscripción Premium no aparece</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si pagaste por Premium pero no tenés acceso:</p>
+              <ol>
+                <li><strong>Restaurar compras:</strong> En la app, andá a tu perfil y buscá la opción "Restaurar compras"</li>
+                <li><strong>Verificá tu Apple ID:</strong> Asegurate de estar usando el mismo Apple ID con el que hiciste la compra</li>
+                <li><strong>Revisá el estado de la suscripción:</strong> Andá a Configuración > [Tu nombre] > Suscripciones y verificá que Mimo esté activa</li>
+                <li><strong>Esperá unos minutos:</strong> A veces Apple tarda en procesar las compras</li>
+              </ol>
+              <p>Si el problema persiste, <a href="#contact">contactanos</a> con tu comprobante de compra.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>La app se cierra sola o anda lenta</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Si experimentás problemas de rendimiento:</p>
+              <ol>
+                <li><strong>Actualizá la app:</strong> Asegurate de tener la última versión desde la App Store</li>
+                <li><strong>Actualizá iOS:</strong> Verificá que tu iPhone tenga la última versión del sistema</li>
+                <li><strong>Reiniciá tu iPhone:</strong> Un reinicio puede liberar memoria y solucionar problemas</li>
+                <li><strong>Liberá espacio:</strong> Si tu iPhone está muy lleno, algunas apps pueden funcionar mal</li>
+                <li><strong>Reinstalá la app:</strong> Como último recurso, eliminá y volvé a instalar Mimo</li>
+              </ol>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Perdí mis datos después de actualizar</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Esto no debería pasar con actualizaciones normales. Si perdiste datos:</p>
+              <ul>
+                <li><strong>Backup de iCloud:</strong> Si tenías backup activado, tus datos deberían restaurarse automáticamente</li>
+                <li><strong>Suscripción:</strong> Tu suscripción Premium siempre se puede recuperar con "Restaurar compras"</li>
+              </ul>
+              <p>Lamentablemente, las afirmaciones favoritas y frases personalizadas se almacenan localmente y no podemos recuperarlas si se perdieron. Te recomendamos mantener activo el backup de iCloud.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact Form -->
+      <section id="contact">
+        <h2 style="margin-bottom: var(--spacing-xl);">📧 Contactanos</h2>
+        
+        <div class="contact-form">
+          <p style="margin-bottom: var(--spacing-xl);">
+            ¿Tenés alguna pregunta, sugerencia o problema que no pudiste resolver? Completá el formulario y te responderemos lo antes posible.
+          </p>
+          
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="name">Nombre</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="topic">Tema</label>
+              <select id="topic" name="topic" class="form-select" required>
+                <option value="">Seleccioná un tema</option>
+                <option value="technical">Problema técnico</option>
+                <option value="subscription">Suscripción / Pagos</option>
+                <option value="feature">Sugerencia de función</option>
+                <option value="content">Contenido / Afirmaciones</option>
+                <option value="other">Otro</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="message">Mensaje</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Contanos en detalle cómo podemos ayudarte..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="device">Dispositivo (opcional)</label>
+              <input type="text" id="device" name="device" class="form-input" placeholder="Ej: iPhone 14, iOS 17.2">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Enviar mensaje
+            </button>
+          </form>
+          
+          <p style="margin-top: var(--spacing-xl); text-align: center; font-size: var(--font-size-small);" class="text-muted">
+            También podés escribirnos directamente a <a href="mailto:soporte@mimo.app">soporte@mimo.app</a>
+          </p>
+        </div>
+      </section>
+      
+      <!-- Response Time -->
+      <section style="text-align: center; margin-top: var(--spacing-4xl); padding: var(--spacing-2xl); background: var(--color-tertiary); border-radius: var(--radius-xl);">
+        <div style="font-size: 40px; margin-bottom: var(--spacing-l);">⏱️</div>
+        <h3>Tiempo de respuesta</h3>
+        <p style="margin-bottom: 0;">Respondemos la mayoría de las consultas en <strong>menos de 24 horas</strong> (días hábiles).</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">☁️</span>
+            <span>Mimo</span>
+          </a>
+          <p>Tu compañero diario de afirmaciones positivas.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Producto</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#download">Descargar</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Soporte</h4>
+          <ul class="footer-links">
+            <li><a href="support.html">Centro de Ayuda</a></li>
+            <li><a href="support.html#contact">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Política de Privacidad</a></li>
+            <li><a href="terms.html">Términos de Servicio</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mimo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+    
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isOpen = item.classList.contains('open');
+        
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('open');
+        });
+        
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

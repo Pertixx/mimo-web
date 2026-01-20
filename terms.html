@@ -8,7 +8,7 @@
   <title>Términos de Servicio - Mimo</title>
   
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/Mimo.png">
 </head>
 <body>
   <!-- Header -->
@@ -196,7 +196,7 @@
         <h2>14. Contacto</h2>
         <p>Si tenés preguntas sobre estos Términos de Servicio, podés contactarnos en:</p>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:legal@mimo.app">legal@mimo.app</a></li>
+          <li><strong>Email:</strong> <a href="mailto:mimoafirmaciones.soporte@gmail.com">mimoafirmaciones.soporte@gmail.com</a></li>
           <li><strong>Soporte:</strong> <a href="support.html">Centro de Ayuda</a></li>
         </ul>
         
@@ -245,7 +245,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2026 Mimo. Todos los derechos reservados.</p>
+        <p>&copy; <span id="currentYear"></span> Mimo. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
@@ -259,6 +259,9 @@
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 10);
     });
+    
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

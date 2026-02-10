@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descargar Mimo - Afirmaciones positivas para iOS y Android">
+  <title>Descargar Mimo - Afirmaciones Diarias</title>
+  
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/Mimo.png">
+  
+  <style>
+    .download-section {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .download-content h1 { margin-bottom: 0.5rem; }
+    .download-content p { color: var(--text-muted, #666); margin-bottom: 1.5rem; }
+    .download-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; }
+    .download-buttons a { min-width: 200px; }
+    .redirect-msg { font-size: 1.1rem; margin-top: 1rem; }
+    .redirect-msg .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(0,0,0,.2); border-top-color: currentColor; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <img src="../assets/Mimo.png" alt="Mimo" class="logo-icon">
+          <span>Mimo</span>
+        </a>
+        
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+        
+        <nav class="nav" id="nav">
+          <a href="../index.html" class="nav-link">Inicio</a>
+          <a href="../faq.html" class="nav-link">FAQ</a>
+          <a href="../support.html" class="nav-link">Soporte</a>
+          <a href="index.html" class="btn btn-primary active">Descargar</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="download-section">
+    <div class="container">
+      <div class="download-content">
+        <!-- Mensaje inicial: se oculta cuando se muestran los botones -->
+        <div id="redirectMessage">
+          <h1>Redirigiendo...</h1>
+          <p class="redirect-msg"><span class="spinner"></span>Llevándote a la tienda de aplicaciones.</p>
+        </div>
+        <!-- Opciones para desktop: oculto hasta que el script decida mostrarlas -->
+        <div id="chooseStore" style="display: none;">
+          <h1>Descargar Mimo</h1>
+          <p>Elegí tu plataforma para descargar la app.</p>
+          <div class="download-buttons" id="downloadButtons"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../assets/Mimo.png" alt="Mimo" class="logo-icon">
+            <span>Mimo</span>
+          </a>
+          <p>Tu compañero diario de afirmaciones positivas.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Producto</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Descargar</a></li>
+            <li><a href="../faq.html">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Soporte</h4>
+          <ul class="footer-links">
+            <li><a href="../support.html">Centro de Ayuda</a></li>
+            <li><a href="../support.html#contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="../privacy.html">Política de Privacidad</a></li>
+            <li><a href="../terms.html">Términos de Servicio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Mimo. Todos los derechos reservados.</p>
+        <div class="social-links">
+          <a href="https://instagram.com/mimoapp" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+          <a href="https://twitter.com/mimoapp" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">🐦</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ========== URLs de descarga (editá estas según tu app) ==========
+    const DOWNLOAD_URLS = {
+      ios: 'https://apps.apple.com/us/app/afirmaciones-diarias-mimo/id6757969746',
+      android: ''  // Ej: 'https://play.google.com/store/apps/details?id=com.tu.app'
+    };
+
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    }
+
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    function redirect(url) {
+      if (url) window.location.replace(url);
+    }
+
+    function showStoreChooser() {
+      document.getElementById('redirectMessage').style.display = 'none';
+      var wrap = document.getElementById('chooseStore');
+      var container = document.getElementById('downloadButtons');
+      wrap.style.display = 'block';
+
+      if (DOWNLOAD_URLS.ios) {
+        var a = document.createElement('a');
+        a.href = DOWNLOAD_URLS.ios;
+        a.className = 'btn btn-primary';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'Descargar para iOS';
+        container.appendChild(a);
+      }
+      if (DOWNLOAD_URLS.android) {
+        var b = document.createElement('a');
+        b.href = DOWNLOAD_URLS.android;
+        b.className = 'btn btn-primary';
+        b.target = '_blank';
+        b.rel = 'noopener';
+        b.textContent = 'Descargar para Android';
+        container.appendChild(b);
+      }
+      if (!DOWNLOAD_URLS.ios && !DOWNLOAD_URLS.android) {
+        container.innerHTML = '<p>No hay enlaces de descarga configurados.</p>';
+      }
+    }
+
+    (function () {
+      if (isIOS() && DOWNLOAD_URLS.ios) {
+        redirect(DOWNLOAD_URLS.ios);
+        return;
+      }
+      if (isAndroid() && DOWNLOAD_URLS.android) {
+        redirect(DOWNLOAD_URLS.android);
+        return;
+      }
+      // Desktop o sin URL para su dispositivo: mostrar opciones
+      showStoreChooser();
+    })();
+
+    // Mobile menu
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      document.getElementById('nav').classList.toggle('open');
+    });
+    window.addEventListener('scroll', function () {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
